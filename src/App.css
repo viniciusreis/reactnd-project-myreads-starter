@@ -10,7 +10,7 @@ body, .app {
 
 /* main page */
 
-.list-books-title {
+/* .list-books-title {
   padding: 10px 0;
   background: #2e7c31;
   text-align: center;
@@ -60,11 +60,11 @@ body, .app {
   background-size: 28px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   font-size: 0;
-}
+} */
 
 /* search page */
 
-.search-books-bar {
+/* .search-books-bar {
   position: fixed;
   width: 100%;
   top: 0;
@@ -101,11 +101,11 @@ body, .app {
 
 .search-books-results {
   padding: 80px 10px 20px;
-}
+} */
 
 /* books grid */
 
-.books-grid {
+/* .books-grid {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -159,11 +159,11 @@ body, .app {
   height: 100%;
   opacity: 0;
   cursor: pointer;
-}
+} */
 
 /* book cover */
 
-.book-cover {
+/* .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background: #eee;
 }
@@ -171,4 +171,4 @@ body, .app {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
-}
+} */
