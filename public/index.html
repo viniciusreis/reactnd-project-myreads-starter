@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
   <link rel="shortcut icon" href="%PUBLIC_URL%/book.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
@@ -21,6 +22,15 @@
       $('.sidenav').sidenav();
     });
   </script>
+  <script>
+    $(document).ready(function () {
+      $('.fixed-action-btn').floatingActionButton({
+        direction: 'left', // Direction menu comes out
+        hoverEnabled: true
+      })
+    })
+  </script>
+
 </body>
 
 </html>

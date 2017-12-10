@@ -103,24 +103,28 @@ class ListBooks extends Component {
     render() {
         return (
             <div>
-                <nav className="default-primary-color">
-                    <div className="nav-wrapper">
-                        <a href="#!" className="brand-logo"><i className="fa fa-book icon-menu hide-on-small-only"/>MyReads</a>
-                        <a href="#" className="sidenav-trigger" data-target="mobile-demo" ><i className="fa fa-bars icon-menu"></i></a>
-                        <ul className="right hide-on-med-and-down">
-                            <li><a href="#"><i className="fa fa-filter icon-menu"/>Filter</a></li>
-                            <li><a href="#"><i className="fa fa-search icon-menu"/>Search</a></li>
-                        </ul>
-                        <ul className="sidenav" id="mobile-demo">
-                            <li><a href="#"><i className="fa fa-filter"/>Filter</a></li>
-                            <li><a href="#"><i className="fa fa-search"/>Search</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                <div className="navbar-fixed">
+                    <nav className="default-primary-color">
+                        <div className="nav-wrapper">
+                            <a href="#!" className="brand-logo"><i className="fa fa-book icon-menu hide-on-small-only"/>MyReads</a>
+                            <a href="#" className="sidenav-trigger" data-target="mobile-demo">
+                                <i className="fa fa-bars icon-menu"></i>
+                            </a>
+                            <ul className="right hide-on-med-and-down">
+                                <li><a href="#"><i className="fa fa-filter icon-menu"/>Filter</a></li>
+                                <li><a href="#"><i className="fa fa-search icon-menu"/>Search</a></li>
+                            </ul>
+                            <ul className="sidenav" id="mobile-demo">
+                                <li><a href="#"><i className="fa fa-filter"/>Filter</a></li>
+                                <li><a href="#"><i className="fa fa-search"/>Search</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
                 <div>
-                        <BookShelf shelfTitle='Currently Reading' bookList={CurrentlyReading}/>
-                        <BookShelf shelfTitle='Want to Read' bookList={WantToRead}/>
-                        <BookShelf shelfTitle='Read' bookList={Read}/>
+                    <BookShelf shelfTitle='Currently Reading' bookList={CurrentlyReading}/>
+                    <BookShelf shelfTitle='Want to Read' bookList={WantToRead}/>
+                    <BookShelf shelfTitle='Read' bookList={Read}/>
                 </div>
                 <OpenSearch/>
             </div>
