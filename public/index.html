@@ -17,16 +17,34 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+
   <script>
     $(document).ready(function () {
       $('.sidenav').sidenav();
     });
   </script>
+
   <script>
     $(document).ready(function () {
+
+      function notMobile() {
+        if (navigator.userAgent.match(/Android/i) ||
+          navigator.userAgent.match(/webOS/i) ||
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i) ||
+          navigator.userAgent.match(/BlackBerry/i) ||
+          navigator.userAgent.match(/Windows Phone/i)
+        ) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
       $('.fixed-action-btn').floatingActionButton({
         direction: 'left', // Direction menu comes out
-        hoverEnabled: true
+        hoverEnabled: notMobile()
       })
     })
   </script>

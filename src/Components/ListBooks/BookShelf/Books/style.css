@@ -1,6 +1,9 @@
 .spacer {
     width: 200px;
-    margin-right: 80px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .book-spacer {
@@ -9,7 +12,7 @@
     justify-content: center;
 }
 
-.blah {
+.anchor-to-element {
     position: absolute;
     display: inline-block;
     z-index: 1;
