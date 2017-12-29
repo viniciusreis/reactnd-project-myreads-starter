@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="975047815714-889pjel5gs6g8bvfq6677qkp69i1sk38.apps.googleusercontent.com">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
   <link rel="shortcut icon" href="%PUBLIC_URL%/book.png">
@@ -17,11 +18,27 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <script>
     $(document).ready(function () {
       $('.sidenav').sidenav();
     });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+
+
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
   </script>
 
   <script>
@@ -48,6 +65,10 @@
       })
     })
   </script>
+
+
+
+
 
 </body>
 
