@@ -2,12 +2,15 @@ import React, {Component} from 'react'
 import BookShelf from './BookShelf'
 import NavegationBar from './NavegationBar'
 import OpenSearch from '../OpenSearch'
+import SignIn from '../SignIn'
 
-const CurrentlyReading = [
+
+const fullList = [
     {
         "id": 0,
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
+        "shelf":"reading",
         "image": {
             "width": 128,
             "height": 193,
@@ -20,6 +23,7 @@ const CurrentlyReading = [
         "id": 1,
         "title": "Ender's Game",
         "author": "Orson Scott Card",
+        "shelf":"reading",
         "image": {
             "width": 128,
             "height": 188,
@@ -28,14 +32,11 @@ const CurrentlyReading = [
                     "RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source" +
                     "=gbs_api"
         }
-    }
-]
-
-const WantToRead = [
-    {
+    }, {
         "id": 2,
         "title": "1776",
         "author": "David McCullough",
+        "shelf":"want",
         "image": {
             "width": 128,
             "height": 193,
@@ -48,6 +49,7 @@ const WantToRead = [
         "id": 3,
         "title": "Harry Potter and the Sorcerer's Stone",
         "author": "J.K. Rowling",
+        "shelf":"want",
         "image": {
             "width": 128,
             "height": 192,
@@ -56,14 +58,11 @@ const WantToRead = [
                     "f480ISXuvYhA_ZpdvRArUL-mZyD4WW7CHyEqHYq9D3kGnrZCNiqxSRhry8TiFDCMWP61ujflB&source" +
                     "=gbs_api"
         }
-    }
-]
-
-const Read = [
-    {
+    }, {
         "id": 4,
         "title": "The Hobbit",
         "author": "J.R.R. Tolkien",
+        "shelf":"done",
         "image": {
             "width": 128,
             "height": 192,
@@ -76,6 +75,7 @@ const Read = [
         "id": 5,
         "title": "Oh, the Places You'll Go!",
         "author": "Seuss",
+        "shelf":"done",
         "image": {
             "width": 128,
             "height": 174,
@@ -88,6 +88,7 @@ const Read = [
         "id": 6,
         "title": "The Adventures of Tom Sawyer",
         "author": "Mark Twain",
+        "shelf":"done",
         "image": {
             "width": 128,
             "height": 192,
@@ -102,13 +103,16 @@ const Read = [
 class ListBooks extends Component {
 
     render() {
+        console.log(this.props.allBooks)
+        // fullList = this.props.allBooks
         return (
             <div>
                 <NavegationBar />
-                <BookShelf shelfTitle='Currently Reading' bookList={CurrentlyReading}/>
-                <BookShelf shelfTitle='Want to Read' bookList={WantToRead}/>
-                <BookShelf shelfTitle='Read' bookList={Read}/>
+                <BookShelf shelfTitle='Currently Reading' bookList={fullList.filter(book => book.shelf === "reading")}/>
+                <BookShelf shelfTitle='Want to Read' bookList={fullList.filter(book => book.shelf === "want")}/>
+                <BookShelf shelfTitle='Read' bookList={fullList.filter(book => book.shelf === "done")}/>
                 <OpenSearch/>
+                <SignIn />
             </div>
         )
     }

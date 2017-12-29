@@ -6,12 +6,6 @@
     margin-bottom: 40px;
 }
 
-.book-spacer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .anchor-to-element {
     position: absolute;
     display: inline-block;

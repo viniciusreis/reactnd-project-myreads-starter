@@ -9,7 +9,9 @@ class BookShelf extends Component {
             <div className="bookshelf">
                 <h5>{this.props.shelfTitle}</h5>
                 <div className="divider"></div>
-                <Books books={this.props.bookList}/>
+                <div className="row book-spacer">
+                    {this.props.bookList.map((b) => (<Books key={b.id} book={b}/>))}
+                </div>
             </div>
         )
     }
